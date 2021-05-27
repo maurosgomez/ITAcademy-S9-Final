@@ -1,14 +1,30 @@
 import React from "react";
+class Searchbar extends React.Component {
 
-const SearchBar = () => {
+  handleChange = (search) => {
 
-  return (
+      this.setState({
+          term: search.target.value
+      });
+  };
+
+  handleSubmit = search => {
+
+      search.preventDefault();
+      this.props.handleFormSubmit(this.state.term);
+  }
+
+  render() {
       
-    <div>
-      <input type="text" placeholder="Search.." />
-    </div>
+      return (
+              <form onSubmit={this.handleSubmit}>
+                  <div>
+                      <label htmlFor="Search"></label>
+                      <input onChange={this.handleChange} type="text" placeholder="Search.."/>
+                  </div>
+              </form>
+             )
+  }
+}
 
-  );
-};
-
-export default SearchBar;
+export default Searchbar;
