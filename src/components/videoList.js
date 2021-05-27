@@ -1,14 +1,16 @@
 import React from "react";
+import VideoItem from './components/VideoItem';
 
-const VideoList = () => {
+const VideoList = ({videos , handleVideoSelect}) => {
 
-  return (
-    
-    <div>
-      <p>VideoList</p>
-    </div>
+const renderedVideos =  videos.map((video) => {
+        
+  return <VideoItem key={video.id.videoId} video={video} handleVideoSelect={handleVideoSelect} />
+       
+  });
 
-  );
+  return <div>{renderedVideos}</div>;
 };
 
 export default VideoList;
+
