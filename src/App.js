@@ -22,7 +22,7 @@ handleSubmit = async (termFromSearchBar) => {
     this.setState ({
       videos: response.data.items
     })
-      console.log("Watch my videos", response);
+      console.log("¡Mira mis videos!", response);
   };
   
 handleVideosSelect = (video) => {

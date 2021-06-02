@@ -1,7 +1,7 @@
 import React from "react";
 import VideoItem from './videoItem';
 
-const VideoList = ({videos , handleVideoSelect}) => {
+const VideoList = ({videos, handleVideoSelect}) => {
 
 const renderedVideos =  videos.map((video) => {
         

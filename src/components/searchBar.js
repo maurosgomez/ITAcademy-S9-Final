@@ -19,8 +19,8 @@ class Searchbar extends React.Component {
       return (
               <form onSubmit={this.handleSubmit}>
                   <div>
-                      <label htmlFor="Search"></label>
-                      <input onChange={this.handleChange} type="text" placeholder="Search.."/>
+                      <label htmlFor="Buscar"></label>
+                      <input onChange={this.handleChange} type="text" placeholder="Buscar"/>
                   </div>
               </form>
              )
