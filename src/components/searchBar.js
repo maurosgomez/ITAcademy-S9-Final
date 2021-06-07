@@ -1,30 +1,36 @@
 import React from "react";
 class Searchbar extends React.Component {
 
-  handleChange = (search) => {
+    handleChange = (search) => {
 
-      this.setState({
-          term: search.target.value
-      });
-  };
+        this.setState({
+            term: search.target.value
+        });
+    
+    };
 
-  handleSubmit = search => {
+    handleSubmit = search => {
+        search.preventDefault();
+        this.props.handleFormSubmit(this.state.term);
+    }
 
-      search.preventDefault();
-      this.props.handleFormSubmit(this.state.term);
-  }
+    render() {
+        
+        return (
+            
+            <>
+                <div className="navbar navbar-expand-md navbar-dark bg-dark">
+                    <div className="mx-auto"> 
+                        <form onSubmit={this.handleSubmit} className="form-inline">
+                                <input onChange={this.handleChange} className="form-control-lg mt-3 mb-3" type="search" placeholder="Buscar" aria-label="Search"/>
+                                <button className="btn-lg btn-danger" type="submit">Buscar</button> 
+                        </form>
+                    </div>  
+                </div>
+            </>
 
-  render() {
-      
-      return (
-              <form onSubmit={this.handleSubmit}>
-                  <div>
-                      <label htmlFor="Buscar"></label>
-                      <input onChange={this.handleChange} type="text" placeholder="Buscar"/>
-                  </div>
-              </form>
-             )
-  }
+        )
+    }
 }
 
 export default Searchbar;
